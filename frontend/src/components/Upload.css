@@ -1,0 +1,122 @@
+.upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.upload-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.upload-card h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.file-input-container {
+  margin: 20px 0;
+}
+
+.file-input {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.file-label {
+  display: block;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.file-label:hover {
+  background-color: #e0e0e0;
+}
+
+.file-info {
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin: 10px 0;
+}
+
+.progress-container {
+  margin: 20px 0;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  height: 20px;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.progress-container span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #333;
+  font-size: 12px;
+}
+
+.upload-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.upload-button:hover {
+  background-color: #1976d2;
+}
+
+.upload-info {
+  margin-top: 30px;
+  border-top: 1px solid #eee;
+  padding-top: 20px;
+}
+
+.upload-info h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.upload-info ul {
+  padding-left: 20px;
+}
+
+.note {
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  margin-top: 15px;
+}

@@ -1,0 +1,34 @@
+services:
+  # Backend API service
+  - type: web
+    name: data-analysis-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: PORT
+        value: 10000
+      - key: PYTHON_VERSION
+        value: 3.9.16
+    disk:
+      name: data
+      mountPath: /app/uploads
+      sizeGB: 1
+    healthCheckPath: /health
+
+  # Frontend service
+  - type: web
+    name: data-analysis-frontend
+    env: node
+    buildCommand: cd frontend && npm install && npm run build
+    startCommand: cd frontend && npm start
+    envVars:
+      - key: REACT_APP_API_URL
+        fromService:
+          type: web
+          name: data-analysis-api
+          envVarKey: RENDER_EXTERNAL_URL
+      - key: NODE_ENV
+        value: production
