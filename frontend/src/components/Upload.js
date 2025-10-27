@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Upload.css';
-
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+import config from '../config';
 
 function Upload({ onUploadSuccess }) {
   const [file, setFile] = useState(null);
@@ -39,7 +38,7 @@ function Upload({ onUploadSuccess }) {
 
     try {
       // Upload file
-      const response = await axios.post(`${API_URL}/upload_excel`, formData, {
+      const response = await axios.post(`${config.apiUrl}/upload_excel`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -50,7 +49,7 @@ function Upload({ onUploadSuccess }) {
       });
 
       // Get schema after successful upload
-      const schemaResponse = await axios.get(`${API_URL}/schema`);
+      const schemaResponse = await axios.get(`${config.apiUrl}/schema`);
       
       setIsUploading(false);
       onUploadSuccess(schemaResponse.data, response.data.table_name);

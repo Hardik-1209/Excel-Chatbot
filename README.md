@@ -85,7 +85,3 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for instructions on deploying to Render (back
 - SQL injection protection through parameterized queries
 - Environment variables for sensitive information
 - Input validation for file uploads
-
-## License
-
-MIT

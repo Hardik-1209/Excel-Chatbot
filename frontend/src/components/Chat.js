@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './Chat.css';
-
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+import config from '../config';
 
 function Chat({ schema, tableName }) {
   const [query, setQuery] = useState('');
@@ -30,7 +29,7 @@ function Chat({ schema, tableName }) {
     setError('');
     
     try {
-      const response = await axios.post(`${API_URL}/query_nl`, {
+      const response = await axios.post(`${config.apiUrl}/query_nl`, {
         query: query
       });
       
